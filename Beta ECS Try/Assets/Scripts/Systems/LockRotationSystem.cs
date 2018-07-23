@@ -5,14 +5,14 @@ using Unity.Entities;
 public class LockRotationSystem : ComponentSystem {
     private struct Filter
     {
-        private Vector3 Rotation;
         private CubeComponent cubeComp;
+        public Transform transform;
     }
 
 	protected override void OnUpdate () {
         foreach (var entity in GetEntities<Filter>())
         {
-            entity.   entity.Rotation
+            entity.transform.rotation = Quaternion.identity; 
         }
     }
 }   

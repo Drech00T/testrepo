@@ -5,19 +5,8 @@ using Unity.Entities;
 
 public class CubeSystem : ComponentSystem {
 
-    private struct Filter
+    protected override void OnUpdate()
     {
-        public Rigidbody rb;
-        public CubeComponent cubeComp;
-        public Transform trans;
-        public OrbitComp orbitComp;
-    }
 
-	protected override void OnUpdate () {
-        foreach (var entity in GetEntities<Filter>())
-        {
-            Debug.Log(entity.rb.gameObject.name);
-            entity.trans.RotateAround(entity.orbitComp.rotationPivotPoint,Vector3.up,10);
-        }
-	}
+    }
 }
