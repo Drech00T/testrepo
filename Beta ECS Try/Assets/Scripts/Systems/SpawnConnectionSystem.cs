@@ -7,7 +7,7 @@ public class SpawnConnectionSystem :ComponentSystem {
 
     private struct Filter
     {
-        public ComponentDataArray <OnConnecting> onConnecting;
+        public ComponentDataArray<OnConnecting> onConnecting;
         public EntityArray entity;
         public readonly int Length;
     }
@@ -19,7 +19,7 @@ public class SpawnConnectionSystem :ComponentSystem {
     {
         for (int i = 0; i < group.Length; i++)
         {
-            Debug.Log("connectionEstablished");
+            //Debug.Log("connectionEstablished: "+ group.onConnecting[i].nodeID + " - " + group.entity[i].Index);
             PostUpdateCommands.RemoveComponent<OnConnecting>(group.entity[i]);
         }  
     }
