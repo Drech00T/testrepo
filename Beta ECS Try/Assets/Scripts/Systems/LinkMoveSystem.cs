@@ -29,6 +29,10 @@ public class LinkMoveSystem : ComponentSystem
                 Vector3 midPoint = (startPoint + endPoint) / 2f;
                 group.transform[i].position = midPoint;
                 //Debug.Log("should move to: " + midPoint);
+
+
+
+
             }
             else
             {

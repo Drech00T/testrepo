@@ -10,6 +10,7 @@ public class HighlightMouseOver : ComponentSystem {
         public ComponentDataArray<MouseOver> mouseOver;
         public ComponentArray<MeshRenderer> renderer;
         public EntityArray entity;
+        public ComponentArray<CubeComponent> cubeComp;
         public readonly int Length;
     }
 

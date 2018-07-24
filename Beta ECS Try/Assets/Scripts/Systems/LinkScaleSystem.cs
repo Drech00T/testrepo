@@ -23,11 +23,11 @@ public class LinkSclaeSystem : ComponentSystem
 
             if (group.linkComp[i].connectedNodes.Count == 2)
             {
-                float linkMeshLength;
+                
                 float linkMeshRadius;
                 linkMeshRadius = group.linkComp[i].linkMeshRadius;
-                linkMeshLength = Vector3.Distance(group.linkComp[i].connectedNodes[0].transform.position, group.linkComp[i].connectedNodes[1].transform.position);
-                group.transform[i].localScale =new Vector3(linkMeshRadius, linkMeshRadius, linkMeshLength * group.linkComp[i].lengthModifier);
+                group.linkComp[i].linkLength = Vector3.Distance(group.linkComp[i].connectedNodes[0].transform.position, group.linkComp[i].connectedNodes[1].transform.position);
+                group.transform[i].localScale =new Vector3(linkMeshRadius, linkMeshRadius, group.linkComp[i].linkLength * group.linkComp[i].lengthModifier);
                 //Debug.Log(group.linkComp[i].connectedNodes[1].name);
                 //Vector3 startPoint = group.linkComp[i].connectedNodes[0].transform.position;
                 //Vector3 endPoint = group.linkComp[i].connectedNodes[1].transform.position;
