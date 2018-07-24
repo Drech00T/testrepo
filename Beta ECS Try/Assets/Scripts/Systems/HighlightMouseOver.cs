@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Entities;
 
+
+[UpdateAfter(typeof(MouseOverSystem))]
 public class HighlightMouseOver : ComponentSystem {
 
     private struct Filter
     {
-        public ComponentDataArray<MouseOver> mouseOver;
+        public readonly ComponentDataArray<MouseOver> mouseOver;
         public ComponentArray<MeshRenderer> renderer;
         public EntityArray entity;
         public ComponentArray<CubeComponent> cubeComp;

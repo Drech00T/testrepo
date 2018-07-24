@@ -24,8 +24,10 @@ public class ConnectionSpawnSystem : ComponentSystem {
     private Collider[] overlapSphereColliders;
     private RaycastHit rayHit;
 
-    protected override void OnUpdate() {
+    
 
+    protected override void OnUpdate() {
+        Physics.queriesHitBackfaces = true;
 
         for (int i = 0; i < group.Length; i++)
         {
